@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Problem Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #bb86fc;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            margin-top: 80px; /* Margin to account for the fixed header */
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #bb86fc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            text-align: justify;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .content h2 {
+            color: #bb86fc;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .content {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Problem Statement</h1>
+    </header>
+    <div class="container">
+        <div class="title">Addressing the Youth's Distraction in Educational Content Consumption</div>
+        <div class="content">
+            <p>
+                In today's digital age, the youth are considered pivotal for national development and progress. However, despite the availability of abundant educational materials online, they often find themselves distracted by non-educational content. A common platform where this distraction occurs is YouTube, where students might start watching educational videos but then get sidetracked by unrelated content such as reels or entertainment.
+            </p>
+            <p>
+                To address this issue, our project aims to develop a platform that helps students stay focused on their educational goals. When a student enters a topic into the platform, it will use the YouTube Data API to fetch relevant educational videos. Additionally, the platform will provide notifications or warnings if the content being watched is not deemed educational, helping students to stay on track with their learning objectives.
+            </p>
+            <h2>Objectives:</h2>
+            <ul>
+                <li>Develop a user-friendly interface to enter and search for educational topics.</li>
+                <li>Integrate with the YouTube Data API to fetch and display relevant educational videos.</li>
+                <li>Implement a monitoring system to identify and warn users if they are watching non-educational content.</li>
+                <li>Enhance user engagement through a clear, visually appealing design and responsive interface.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile - eCommerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #ff5722;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .profile-info {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .profile-info h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #ffffff;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            color: #b0b0b0;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 3px solid #ff5722;
+            margin-bottom: 20px;
+        }
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            color: #ffffff;
+            border-bottom: 3px solid transparent;
+            font-weight: bold;
+            transition: background-color 0.3s, border-bottom-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #333333;
+        }
+        .active-tab {
+            border-bottom-color: #ff5722;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .order-item, .setting-item {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .order-item h3, .setting-item h3 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+        .order-item p, .setting-item p {
+            margin: 5px 0;
+            color: #b0b0b0;
+        }
+        .setting-item a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+        .setting-item a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .profile-info h1 {
+                font-size: 1.5em;
+            }
+            .tabs {
+                flex-direction: column;
+            }
+            .tab {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <!-- Profile picture removed -->
+            <div class="profile-info">
+                <h1 id="h1">Jane Smith</h1>
+                <p id="email">Email: jane.smith@example.com</p>
+                <p>Member Since: January 2021</p>
+                <p>Location: India</p>
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="tab active-tab" data-target="orders">Member History</div>
+            <div class="tab" data-target="settings">Account Settings</div>
+        </div>
+        <div id="orders" class="content active">
+            <!-- Content for Member History will go here -->
+        </div>
+        <div id="settings" class="content">
+            <div class="setting-item">
+                <h3>Change Password</h3>
+                <p><a href="#">Click here to change your password.</a></p>
+            </div>
+            <div class="setting-item">
+                <h3>Update Email Address</h3>
+                <p><a href="#">Click here to update your email address.</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let userinfo = {};
+        document.addEventListener('DOMContentLoaded', () => {
+            async function fetchUserData() {
+                try {
+                    const response = await fetch('/user-data');
+                    const data = await response.json();
+                    userinfo = data;
+                    console.log(userinfo);
+                    const unique = (userinfo[0].name) + (userinfo[0].phone).slice(0,4);
+                    let heading = document.getElementById("h1");
+                    heading.innerText =  userinfo[0].name;
+                    let un = document.getElementById("email");
+                    un.innerText = "Email:" + " " + userinfo[0].email;
+                } catch (error) {
+                    console.error('Error fetching user data:', error);
+                }
+            }
+
+            fetchUserData();
+        });
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active-tab'));
+                document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active-tab');
+                document.getElementById(tab.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

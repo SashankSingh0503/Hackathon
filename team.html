@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Developers</title>
+    <style>
+        /* Resetting some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Setting the font and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #888;
+}
+
+/* Styling the tiles */
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tile {
+    background-color: #333;
+    border: 3px solid #555;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+.tile h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tile p {
+    font-size: 1em;
+}
+
+#surendra {
+    background-color: #f44336; /* Red */
+}
+
+#abhisekh {
+    background-color: #4caf50; /* Green */
+}
+
+#vansh {
+    background-color: #2196f3; /* Blue */
+}
+
+#sashank {
+    background-color: #ff9800; /* Orange */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Our Team</h1>
+            <p>Powered by Self</p>
+        </header>
+        <main>
+            <div class="tiles">
+                <div class="tile" id="surendra">
+                    <h2>Surendra</h2>
+                    <p>Surendra is a seasoned developer with a passion for open-source projects. He excels in backend technologies and has a knack for solving complex problems.</p>
+                </div>
+                <div class="tile" id="abhisekh">
+                    <h2>Abhisekh</h2>
+                    <p>Abhisekh specializes in frontend development and UI/UX design. He has an eye for detail and loves creating visually stunning and user-friendly interfaces.</p>
+                </div>
+                <div class="tile" id="vansh">
+                    <h2>Vansh</h2>
+                    <p>Vansh is an expert in full-stack development with experience in both frontend and backend technologies. He enjoys working on diverse projects and learning new technologies.</p>
+                </div>
+                <div class="tile" id="sashank">
+                    <h2>Sashank</h2>
+                    <p>Sashank focuses on data science and machine learning. He is passionate about deriving insights from data and building intelligent systems.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
